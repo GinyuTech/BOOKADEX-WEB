@@ -1,0 +1,15 @@
+{
+    "name": "bookadex/mvc",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "João Victor Vaz",
+            "email": "joao.vaz@fatec.sp.gov.br"
+        }
+    ],
+    "require": {}
+}
