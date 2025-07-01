@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Bookadex - Cadastro</title>
+    <link href="img/logo_img.png" rel="icon">
+    <link href="img/logo_img.png" rel="bookadex-icon">
+    <link rel="stylesheet" href="css/preloader.css">
+</head>
+<body>
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Logo Bookadex">
+            </a>
+            <div class="nav-links">
+                <a href="desafio.html"><p>Desafios</p></a>
+                <a href="categorias.html"><p>Categorias</p></a>
+                <a href="ranking.html"><p>Ranking</p></a>
+                <a href="loja.html"><p>Loja</p></a>
+                <!-- <a href="https://api.whatsapp.com/send/?phone=5511984982869&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"><p>Contato</p></a> -->
+                <a href="../index.html"><p>GINYU TECH</p></a>
+            </div>
+            <div class="nav-right">
+                <a href="premium.html" class="premium-btn">Torne-se Premium</a>
+                <a href="login.html" class="login">Login</a>
+            </div>
+        </nav>       
+    </header>
+
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="img/img_login/fundovideologin.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+
+    <main>
+        <div class="form_container">
+            <form action="" method="post">
+                <div class="formcadastro">
+                    <div class="cadtitle">
+                        <h1>Bem-vindo ao Bookadex!</h1>
+                        <h2>Crie sua conta</h>
+                    </div>
+                    <div class="formduo">
+                        <div class="cadinput">
+                            <p>Nome:</p>
+                            <input type="text" name="nome" placeholder="Digite seu nome">
+                        </div>
+                        <div class="cadinput">
+                            <p>Usuário:</p>
+                            <input type="text" name="usuario" placeholder="Digite seu usuário">
+                        </div>
+                    </div>
+                    <div class="formduo">
+                        <div class="cadinput">
+                            <p>E-mail:</p>
+                            <input type="text" name="email" placeholder="Digite seu e-mail">
+                        </div>
+                        <div class="cadinput">
+                            <p>Data de Nascimento:</p>
+                            <input type="text" id="data" name="datanasci" placeholder="Digite sua data" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="formduo">
+                        <div class="cadinput">
+                            <p>Senha:</p>
+                            <input type="password" name="senha" placeholder="Digite sua senha">
+                        </div>
+                        <div class="cadinput">
+                            <p>Confirme sua Senha:</p>
+                            <input type="password" placeholder="Digite novamente sua senha">
+                        </div>
+                    </div>
+                    <input type="submit" value="Registrar">
+                    <div class="btn_back">
+                        <a href="index.html"><img src="img/img_login/btnvoltar.png" alt=""></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </main>
+     <script>
+        document.getElementById('data').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, "");
+            if (value.length > 2) value = value.substring(0,2) + '/' + value.substring(2);
+            if (value.length > 5) value = value.substring(0,5) + '/' + value.substring(5,10);
+            e.target.value = value;
+        });
+    </script>
+
+    <script src="js/preloader.js"></script> 
+
+</body>
