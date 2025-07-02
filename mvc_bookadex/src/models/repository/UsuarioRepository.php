@@ -96,6 +96,36 @@ class UsuarioRepository{
          $stmt -> bindParam(":id", $id);
          $stmt->execute(); 
     }
-}
 
+    public function findByEmailOuApelido(string $valor): ?Usuario {
+        try {
+            $query = "SELECT Id, NomeUsuario, Apelido, Email, Senha, Telefone FROM usuario WHERE email = :valor OR apelido = :valor LIMIT 1";
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(":valor", $valor, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $dados = $stmt->fetch(PDO::FETCH_ASSOC); // Obtém apenas uma linha
+
+            if ($dados) {
+                // Instancia e preenche o objeto Usuario com os dados do banco
+                $usuario = new Usuario(
+                    $dados['NomeUsuario'],
+                    $dados['Apelido'],
+                    $dados['Email'],
+                    $dados['Senha'],
+                    $dados['Telefone']
+                );
+                $usuario->setId($dados['Id']);
+                return $usuario;
+            }
+
+            return null; // Nenhum usuário encontrado
+
+        } catch (\Exception $e) {
+            // Captura erros de banco de dados e relança uma exceção
+            throw new \Exception("Erro ao buscar usuário no banco de dados.");
+        }
+    }
+}
 ?>

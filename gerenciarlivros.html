@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookadex - Gerenciar Livros</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/gerenciarLivros.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="img/logo_img.png" rel="icon">
+    <link href="img/logo_img.png" rel="bookadex-icon">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+</head>
+<body>
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Logo Bookadex">
+            </a>
+            <div class="nav-links">
+                <a href="desafio.html"><p>Desafios</p></a>
+                <a href="categorias.html"><p>Categorias</p></a>
+                <a href="ranking.html"><p>Ranking</p></a>
+                <a href="loja.html"><p>Loja</p></a>
+                <a href="../index.html"><p>GINYU-TECH</p></a>
+            </div>
+            <div class="nav-right" id="navRightSection">
+            </div>
+        </nav>       
+    </header>
+
+    <main>
+        <h1>Gerenciar Livros</h1>
+
+        <section class="form-section">
+            <h2>Adicionar Novo Livro</h2>
+            <form id="addBookForm">
+                <label for="addTitulo">Título:</label>
+                <input type="text" id="addTitulo" required>
+
+                <label for="addAutor">Autor:</label>
+                <input type="text" id="addAutor" required>
+
+                <label for="addAnoPublicacao">Data de Lançamento:</label>
+                <input type="date" id="addAnoPublicacao" required>
+                
+                <label for="addSinopse">Sinopse:</label>
+                <textarea id="addSinopse" rows="4" required></textarea>
+
+                <button type="submit">Adicionar Livro</button> 
+                <div id="addBookMessage" class="message"></div>
+            </form>
+        </section>
+
+        <section class="book-list-section">
+            <h2>Lista de Livros</h2>
+            <button id="btnListarLivros" class="action-button">Carregar Livros</button> 
+            <div id="listBookMessage" class="message"></div>
+            <table class="book-table">
+                <thead>
+                    <tr>
+                        <th>Nome do Livro</th>
+                        <th>Autor</th>
+                        <th>Data Lançamento</th>
+                        <th>Sinopse</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="bookListBody">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="editBookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Editar Livro</h2>
+            <form id="editBookForm">
+                <input type="hidden" id="editId">
+                
+                <label for="editTitulo">Título:</label>
+                <input type="text" id="editTitulo" required>
+
+                <label for="editAutor">Autor:</label>
+                <input type="text" id="editAutor" required>
+
+                <label for="editAnoPublicacao">Data de Lançamento:</label>
+                <input type="date" id="editAnoPublicacao" required>
+
+                <label for="editSinopse">Sinopse:</label>
+                <textarea id="editSinopse" rows="4" required></textarea>
+
+                <button type="submit">Salvar Alterações</button>
+                <div id="editBookMessage" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Navegação:</h4>
+                <ul>
+                    <li><a href="#">Políticas de privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="https://ginyu-tech.vercel.app/#sobre">Sobre nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contato:</h4>
+                <p>equipe.ginyutech@gmail.com</p>
+                <p>(11) 98498-2869</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais:</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/Ginyu-Tech/61560247050824/"><img src="img/LogoFace.png" alt="Facebook"></a>
+                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=equipe.ginyutech@gmail.com&su=Olá+Ginyu+Tech&body=Gostaria+de+saber+mais+sobre+sua+empresa.&tf=cm"><img src="img/LogoEmail.png" alt="Email"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511984982869&text=Olá%2C+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"><img src="img/LogoWhats.png" alt="Whatsapp"></a>
+                    <a href="https://www.instagram.com/ginyu_tech/"><img src="img/LogoInsta.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <p>BOOKADEX</p>
+            </div>
+        </div>
+    </footer>     
+    <script src="js/preloader.js"></script>     
+    <script src="js/gerenciarlivros.js"></script>
+</body>
+</html>

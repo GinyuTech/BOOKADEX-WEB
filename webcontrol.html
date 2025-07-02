@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <style>
+        @import url(css/webcontrol.css);
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Bookadex - Painel Admin</title>
+    <link href="img/logo_img.png" rel="icon">
+    <link href="img/logo_img.png" rel="bookadex-icon">
+    <link rel="stylesheet" href="css/preloader.css">
+</head>
+<body>
+    <div class="preloader">
+        <span class="loader"></span>
+    </div>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="Logo Bookadex">
+            </a>
+            <div class="nav-links">
+                <a href="perguntas.html"><p>Perguntas</p></a>
+                <a href="categorias.html"><p>Categorias</p></a>
+                <a href="#"><p>Ranking</p></a>
+                <a href="#"><p>Loja</p></a>
+                <!-- <a href="https://api.whatsapp.com/send/?phone=5511984982869&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"><p>Contato</p></a> -->
+                <a href="../index.html"><p>GINYU TECH</p></a>
+            </div>
+            <div class="nav-right">
+                <div class="imgprofile">
+                    <img src="img/avali2.png" alt="">
+                </div>
+            </div>
+        </nav>       
+    </header>
+    <main>
+        <div class="banner_perguntas">
+            <img src="img/img_webcontrol/banner_webcontrol.png" alt="">
+        </div>
+        <div class="nav_webcontrol">
+            <button onclick="goToPage(0)" class="slider-button active">Gerenciar Usuários</button>
+            <button onclick="goToPage(1)" class="slider-button">Registrar Perguntas</button>
+            <button onclick="goToPage(2)" class="slider-button">Gerenciar Perguntas</button>
+            <!-- <button onclick="goToPage(3)" class="slider-button">Gerenciar Livro</button> -->
+            <button onclick="window.location.href='gerenciarLivros.html'" class="slider-button">Gerenciar Livro</button>
+            <button onclick="goToPage(4)" class="slider-button">Gerenciar Rankings</button>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <div class="page page1">
+                    <h2>Gerenciar Usuários</h2>
+                </div>
+                <div class="page page2">
+                    <form class="quiz-create" action="" method="post">
+                        <div class="quiztitle">
+                            <h2>Criar Quiz</h2>
+                        </div>
+                        <label>Selecione o livro:</label>
+                        <div class="carrousel">
+                            <div class="card-container">
+                                <div class="card">
+                                <img src="img/img_cat/harry-potter3.png" alt="Harry Potter e o Prisioneiro de Azkaban">
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card">
+                                <img src="img/img_cat/percy-jackson2.png" alt="Percy Jackson e o Mar de Monstros">
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card">
+                                <img src="img/img_cat/jogos-vorazes.png" alt="Jogos Vorazes">
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card">
+                                <img src="img/img_cat/harry-potter1.png" alt="Harry Potter e a Pedra Filosofal">
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Pergunta:</h3>
+                        <textarea class="question" type="text" placeholder="Digite a pergunta" maxlength="155"></textarea>
+                        <div class="difficulty">
+                        <label style="margin-right: 50px;">Dificuldade:</label>
+                        <div class="custom-select" id="difficultyDropdown">
+                            <div class="select-selected" data-value="normal">Normal</div>
+                            <div class="select-items select-hide">
+                            <div data-value="easy">Fácil</div>
+                            <div data-value="normal">Normal</div>
+                            <div data-value="hard">Difícil</div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="difficulty" id="difficultyInput" value="normal" />
+                        </div>
+                        <br>
+                        <label>Alternativas:</label>
+                        <p style="font-size: 20px;">Marque a alternativa correta</p>
+                        <div>
+                            <input type="text" id="alt1"><input type="radio" name="isCorrect" value="A">
+                        </div>
+                        <div>
+                            <input type="text" id="alt1"><input type="radio" name="isCorrect" value="A">
+                        </div>
+                        <div>
+                            <input type="text" id="alt1"><input type="radio" name="isCorrect" value="A">
+                        </div>
+                        <div>
+                            <input type="text" id="alt1"><input type="radio" name="isCorrect" value="A">
+                        </div>
+                        <br>
+                    </form>
+                </div>
+                <div class="page page3">Page 3</div>
+                <div class="page page4">Page 4</div>
+                <div class="page page5">Page 5</div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Navegação:</h4>
+                <ul>
+                    <li><a href="#">Políticas de privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="https://ginyu-tech.vercel.app/#sobre">Sobre nós</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contato:</h4>
+                <p>equipe.ginyutech@gmail.com</p>
+                <p>(11) 98498-2869</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais:</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/Ginyu-Tech/61560247050824/"><img src="img/LogoFace.png" alt="Facebook"></a>
+                    <a href="https://mail.google.com/mail/u/0/?fs=1&to=equipe.ginyutech@gmail.com&su=Ol%C3%A1+Ginyu+Tech&body=Gostaria+de+saber+mais+sobre+sua+empresa.&tf=cm"><img src="img/LogoEmail.png" alt="Email"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5511984982869&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"><img src="img/LogoWhats.png" alt="Whatsapp"></a>
+                    <a href="https://www.instagram.com/ginyu_tech/"><img src="img/LogoInsta.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <p>BOOKADEX</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/webcontrol.js"></script>  
+    <script src="js/preloader.js"></script>    
+    <script src="js/quiz.js"></script>
+</body>

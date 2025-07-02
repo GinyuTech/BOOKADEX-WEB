@@ -10,6 +10,22 @@
     <link href="img/logo_img.png" rel="bookadex-icon">
     <link rel="stylesheet" href="css/preloader.css">
      <link rel="stylesheet" href="css/dropdown.css">     
+
+     <script>
+  fetch("http://localhost/mvc_bookadex/api/usuarios")
+    .then(response => response.json())
+    .then(data => {
+      console.log("Resposta da API:", data);
+      // Aqui você pode preencher a interface com os dados
+      document.getElementById("resposta").innerText = JSON.stringify(data);
+    })
+    .catch(error => {
+      console.error("Erro na API:", error);
+    });
+</script>
+
+<div id="resposta"></div>
+
 </head>
 <body>
     <div class="preloader">
@@ -27,7 +43,7 @@
                 <a href="ranking.html"><p>Ranking</p></a>
                 <a href="loja.html"><p>Loja</p></a>
                 <!-- <a href="https://api.whatsapp.com/send/?phone=5511984982869&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"><p>Contato</p></a> -->
-                <a href="Ginyu-Tech-main/index.html"><p>GINYU TECH</p></a>
+                <a href="../index.html"><p>GINYU TECH</p></a>
             </div>
             <div class="nav-right">
                 <a href="premium.html" class="premium-btn">Torne-se Premium</a>
@@ -39,7 +55,7 @@
                     <img class="mdldi" src="img/img_loja/octoken.png" alt="">
                     <p>100</p>
                 </div>
-                <div class="imgprofile" onclick="toggleDropdown(event)">
+                <div class="imgprofile" onclick="toggleDropdown()">
                     <img src="img/img_perfil/imgprofileLevi.png" alt="">
                     <div class="profile-dropdown" id="profileDropdown">
                         <div class="profile-header">
@@ -215,8 +231,8 @@
             <section class="conheca-ginyu">
                 <h2>Já Conhece a Ginyu?</h2>
                 <div class="buttons">
-                    <a href="Ginyu-Tech-main/index.html" class="btn black">Ir para o site</a>
-                    <a href="Ginyu-Tech-main/index.html#sobre" class="btn green">Sobre nós</a>
+                    <a href="../index.html" class="btn black">Ir para o site</a>
+                    <a href="../index.html#sobre" class="btn green">Sobre nós</a>
                 </div>
             </section>
 
@@ -229,7 +245,7 @@
                     <ul>
                         <li><a href="#">Políticas de privacidade</a></li>
                         <li><a href="#">Termos de uso</a></li>
-                        <li><a href="Ginyu-Tech-main/index.html#sobre">Sobre nós</a></li>
+                        <li><a href="https://ginyu-tech.vercel.app/#sobre">Sobre nós</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -251,7 +267,8 @@
                 </div>
             </div>
         </footer>    
-        <script src="js/preloader.js"></script>    
+        <script src="js/preloader.js"></script> 
+        <script src="js/header_global.js"></script>    
 
 </body>
 </html>

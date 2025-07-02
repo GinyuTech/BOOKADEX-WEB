@@ -83,7 +83,7 @@ input:focus {
     width: 200px;
     cursor: pointer;
     background-color: #ce0610;
-    font-style: bold;
+    font-weight: bold;
     color: #ffffff;
     padding-left: 0;
     transition: 0.5s;

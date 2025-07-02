@@ -1,0 +1,415 @@
+/* Estilos gerais para o corpo e main */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: block; /* Garante que se comporta como um bloco */
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* Estilos para as seções de formulário e lista */
+.form-section,
+.book-list-section {
+    background-color: #f9f9f9;
+    padding: 25px;
+    margin-bottom: 30px; /* Espaço entre as seções */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: block; /* Garante que cada seção ocupa seu próprio espaço */
+    overflow: hidden; /* Limpa floats internos se houver */
+}
+
+.form-section h2,
+.book-list-section h2 {
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+/* Estilos para formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os elementos do formulário */
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 80px; /* Altura mínima para a sinopse */
+}
+
+form button[type="submit"] {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center; /* Centraliza o botão dentro do flex container do form */
+    width: auto; /* Garante que não ocupe 100% da largura, se align-self for usado */
+    min-width: 150px; /* Garante um tamanho mínimo */
+}
+
+form button[type="submit"]:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Estilos para o botão "Carregar Livros" */
+.book-list-section .action-button {
+    margin-bottom: 20px;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    
+    /* Centralização de um elemento de bloco */
+    display: block; /* Mude de inline-block para block para margin: auto funcionar */
+    width: fit-content; /* Faz o botão ocupar apenas a largura do seu conteúdo */
+    margin: 0 auto 20px auto; /* Centraliza horizontalmente e mantém a margem inferior */
+}
+
+.book-list-section .action-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para a tabela de livros */
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden; /* Garante que bordas arredondadas funcionem com conteúdo */
+    text-align: left; /* Alinha o texto da tabela à esquerda */
+}
+
+.book-table th,
+.book-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.book-table th {
+    background-color: #e9ecef;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.book-table tr:last-child td {
+    border-bottom: none;
+}
+
+.book-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.book-table .actions button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.book-table .actions .edit {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.book-table .actions .edit:hover {
+    background-color: #e0a800;
+}
+
+.book-table .actions .delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.book-table .actions .delete:hover {
+    background-color: #c82333;
+}
+
+/* --- Estilos para as Mensagens de Status (dentro dos forms e lista) --- */
+.message {
+    display: none; /* Garante que a mensagem não aparece e não ocupa espaço inicialmente */
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box; /* Garante que padding e border não aumentam o tamanho */
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* --- Estilos para o Modal de Edição --- */
+
+.modal {
+    display: none; /* Padrão: escondido */
+    position: fixed; /* Fixado na tela */
+    z-index: 1000; /* Acima de todo o conteúdo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar scroll se o conteúdo for maior que a tela */
+    background-color: rgba(0,0,0,0.6); /* Fundo semi-transparente */
+    display: flex; /* Usar flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    opacity: 0; /* Começa invisível para animação */
+    transition: opacity 0.3s ease-in-out; /* Transição suave */
+}
+
+.modal.show { /* Classe para exibir o modal com animação */
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fff; /* Fundo branco */
+    margin: auto; /* Para fallback de centralização */
+    padding: 30px;
+    border: none; /* Remover borda padrão */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Sombra mais pronunciada */
+    width: 90%; /* Largura padrão */
+    max-width: 600px; /* Largura máxima */
+    position: relative;
+    transform: translateY(-20px); /* Começa um pouco acima para animação */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+.modal.show .modal-content {
+    transform: translateY(0); /* Desliza para a posição final */
+}
+
+.modal-content h2 {
+    color: #333;
+    font-size: 2em; /* Título maior */
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #007bff; /* Linha de destaque */
+    padding-bottom: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px; /* Aumentar o tamanho do X */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+/* Estilo dos campos do formulário dentro do modal */
+#editBookForm label {
+    display: block; /* Cada label em uma nova linha */
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+#editBookForm input[type="text"],
+#editBookForm input[type="date"],
+#editBookForm textarea {
+    width: calc(100% - 20px); /* Considera o padding interno */
+    padding: 12px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    box-sizing: border-box; /* Inclui padding e borda na largura */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#editBookForm input[type="text"]:focus,
+#editBookForm input[type="date"]:focus,
+#editBookForm textarea:focus {
+    border-color: #007bff; /* Borda azul ao focar */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Sombra suave ao focar */
+    outline: none; /* Remove a outline padrão do navegador */
+}
+
+#editBookForm textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 100px; /* Altura mínima para a sinopse */
+}
+
+/* Estilo do botão de salvar */
+#editBookForm button[type="submit"] {
+    background-color: #28a745; /* Cor verde para salvar */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Ocupa 100% da largura do modal content */
+}
+
+#editBookForm button[type="submit"]:hover {
+    background-color: #218838; /* Escurece no hover */
+    transform: translateY(-2px); /* Pequeno movimento para cima */
+}
+
+/* Mensagens dentro do modal (já cobertas pela regra .message, mas mantidas para especificidade) */
+#editBookMessage.message {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    main {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .form-section,
+    .book-list-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-section h2,
+    .book-list-section h2 {
+        font-size: 1.5em;
+    }
+
+    form input[type="text"],
+    form input[type="date"],
+    form textarea,
+    form button[type="submit"] {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+
+    .book-list-section .action-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .book-table th,
+    .book-table td {
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+
+    .book-table .actions button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        margin: 0 3px;
+    }
+
+    /* Modal responsividade */
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    .modal-content h2 {
+        font-size: 1.8em;
+    }
+    .close-button {
+        font-size: 28px;
+        top: 10px;
+        right: 20px;
+    }
+    #editBookForm button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}

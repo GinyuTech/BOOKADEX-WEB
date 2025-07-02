@@ -36,7 +36,7 @@
                     <img class="mdldi" src="img/img_loja/octoken.png" alt="">
                     <p>100</p>
                 </div>
-                <div class="imgprofile" onclick="toggleDropdown(event)">
+                <div class="imgprofile" onclick="toggleDropdown()">
                     <img src="img/img_perfil/imgprofileSilas.png" alt="">
                     <div class="profile-dropdown" id="profileDropdown">
                         <div class="profile-header">
@@ -266,7 +266,7 @@
         <div class="item_octoken">
             <img src="img/img_loja/octoken.png" alt="">
             <div class="mon_info">
-                  <h1>Um Punhado de Octokens</h1>
+                  <h1>um punhado de Octokens</h1>
                     <h2>20</h2>
                     <h3>R$ 9,99</h3>
                 <button>Comprar</button>
@@ -275,7 +275,7 @@
        <div class="item_octoken">
             <img src="img/img_loja/octoken_loja/carteira.png" alt="">
             <div class="mon_info">
-                  <h1>Uma Carteira de Octokens</h1>
+                  <h1>uma carteira de Octokens</h1>
                     <h2>50</h2>
                     <h3>R$ 24,99</h3>
                 <button>Comprar</button>
@@ -284,7 +284,7 @@
        <div class="item_octoken">
             <img src="img/img_loja/octoken_loja/carrinho.png" alt="">
             <div class="mon_info">
-                  <h1>Um Carrinho de Octokens</h1>
+                  <h1>um carrinho de Octokens</h1>
                     <h2>100</h2>
                     <h3>R$ 49,99</h3>
                 <button>Comprar</button>
@@ -293,7 +293,7 @@
                 <div class="item_octoken">
             <img src="img/img_loja/octoken_loja/cofre.png" alt="">
             <div class="mon_info">
-                  <h1>Um Cofre Cheio de Octokens</h1>
+                  <h1>um cofre cheio de Octokens</h1>
                     <h2>500</h2>
                     <h3>R$ 149,99</h3>
                 <button>Comprar</button>
@@ -302,7 +302,7 @@
        <div class="item_octoken">
             <img src="img/img_loja/octoken_loja/montanha.png" alt="">
             <div class="mon_info">
-                  <h1>Uma Montanha de Octokens</h1>
+                  <h1>Uma montanha de octokens</h1>
                     <h2>1000</h2>
                     <h3>R$ 299,99</h3>
                 <button>Comprar</button>
@@ -406,63 +406,11 @@
         <div class="personagem">
             <img src="img/img_loja/sailas.png" alt="">
         </div>
-        <!-- Modal de Compra -->
-        <div id="modalCompra" class="modal-compra">
-            <div class="modal-conteudo">
-                <span class="fechar" id="fecharModal">&times;</span>
-                <div class="modal-imagem">
-                    <img id="modalImagem" src="" alt="Item Selecionado" />
-                </div>
-                <div class="modal-info">
-                    <h2 id="modalNome">Nome do Item</h2>
-
-                <div class="botoes-compra">
-                    <div class="botao-container">
-                    <p class="comprar-label">Comprar com Polvólar:</p>
-                    <button class="comprar-polvoeda">
-                        <img class="povoleda" src="img/img_loja/polvoeda.png" alt="" />
-                        <span id="valorPolvoeda">--</span>
-                    </button>
-                    </div>
-                    <div class="botao-container">
-                    <p class="comprar-label">Comprar com Octoken:</p>
-                    <button class="comprar-octoken">
-                        <img src="img/img_loja/octoken.png" alt="" />
-                        <span id="valorOctoken">--</span>
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-
-            </div>
-        </div>
-
-        <!-- Modal exclusivo de Octoken -->
-        <div id="modalOctoken" class="modal-compra">
-            <div class="modal-conteudo">
-                <span class="fechar" id="fecharModalOctoken">&times;</span>
-                <div class="modal-imagem">
-                    <img id="modalImagemOctoken" src="" alt="Pacote Octoken" />
-                </div>
-                <div class="modal-info">
-                        <h2 id="modalNomeOctoken">Nome do Pacote</h2>
-                        <h3 id="modalQtdOctoken">Quantidade: -- Octokens</h3>
-                    <button class="comprar-reais">
-                        <span id="precoReais">R$ --</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-
-
-
     </main>
-    
 </body>
 
 
 <script src="js/loja.js"></script>
-<script src="js/preloader.js"></script>   
+<script src="js/preloader.js"></script> 
+<script src="js/header_global.js"></script>  
 </html>

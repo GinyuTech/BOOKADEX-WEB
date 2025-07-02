@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link id="perfilStylesheet" rel="stylesheet" href="css/meuperfil.css">
     <link id="dropdownStylesheet" rel="stylesheet" href="css/dropdown.css">
-    <!-- <link id="configStylesheet" rel="stylesheet" href="css/config.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Bookadex - Meu perfil</title>
     <link href="img/logo_img.png" rel="icon">
@@ -17,51 +16,23 @@
     <div class="preloader">
         <span class="loader"></span>
     </div>
-    
+
     <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="img/logo.png" alt="Logo Bookadex">
-            </a>
-            <div class="nav-links">
-                <a href="desafio.html"><p>Desafios</p></a>
-                <a href="categorias.html"><p>Categorias</p></a>
-                <a href="ranking.html"><p>Ranking</p></a>
-                <a href="loja.html"><p>Loja</p></a>
-                <!-- <a href="https://api.whatsapp.com/send/?phone=5511984982869&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0"><p>Contato</p></a> -->
-                <a href="../index.html"><p>GINYU TECH</p></a>
-            </div>
-            <div class="nav-right">
-                <a href="premium.html" class="premium-btn">Torne-se Premium</a>
-                <div class="tokens">
-                    <img class="polvoeda" src="img/img_loja/polvoeda.png" alt="">
-                    <p>504</p>
-                    <img class="mdldi" src="img/img_loja/octoken.png" alt="">
-                    <p>100</p>
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="Logo Bookadex">
+                </a>
+                <div class="nav-links">
+                    <a href="desafio.html"><p>Desafios</p></a>
+                    <a href="categorias.html"><p>Categorias</p></a>
+                    <a href="ranking.html"><p>Ranking</p></a>
+                    <a href="loja.html"><p>Loja</p></a>
+                    <a href="../index.html"><p>GINYU-TECH</p></a>
                 </div>
-                <div class="imgprofile" onclick="toggleDropdown(event)">
-                    <img src="img/img_perfil/imgprofileSilas.png" alt="">
-                    <div class="profile-dropdown" id="profileDropdown">
-                        <div class="profile-header">
-                            <img src="img/img_perfil/imgprofileSilas.png" alt="Foto de Perfil" class="dropdown-profile-img">
-                            <div>
-                                <p class="profile-username">Silão da Massa</p>
-                                <p class="profile-name">Silas Ferreira de Moura</p>
-                                <p class="profile-points"><span>Pontos:</span> 1045</p>
-                            </div>
-                        </div>
-                        <ul class="profile-options">
-                            <li><a href="meuperfil.html">Meu Perfil</a></li>
-                            <li><a href="personagem.html">Personagem</a></li>
-                            <li><a href="meusquiz.html">Meus quizzes</a></li>
-                            <li><a href="config.html">Configurações</a></li>
-                            <li><a href="#">Sair</a></li>
-                        </ul>
-                    </div>
+                <div class="nav-right" id="navRightSectionCategorias">
                 </div>
-            </div>
-        </nav>       
-    </header>
+            </nav>
+        </header>
     <main>
         <div class="profile_container">
             <div class="profile_title">
@@ -70,15 +41,17 @@
             <div class="profile_part">
                 <div class="left_part">
                     <div class="imgprofilebig">
-                        <img src="img/img_perfil/imgprofileSilas.png" alt="">
+                        <img src="img/img_perfil/default_profile.png" alt="Foto de Perfil" id="mainProfileImage">
                         <div class="edit-icon">
                         <img src="img/lapisedit2.png" alt="Editar">
                         </div>
                     </div>
-                    <div class="hellopeople">
-                        <h3>Olá, <span>Silas</span>!</h3>
+                    <div class="hellopeople" id="hellopeople">
+                        <h3>Olá, <span>Usuário</span>!</h3>
                     </div>
-                    <div class="editbtn"><input type="submit" value="Atualizar Perfil"></div>
+                    <div class="editbtn">
+                        <input type="submit" value="Atualizar Perfil" id="updateProfileButton">
+                    </div>
                 </div>
                 <div class="formedit">
                     <div class="info_boxcont">
@@ -95,32 +68,37 @@
                             <h2>1045</h2>
                         </div>
                     </div>
-                    <div class="formbox">
-                        <div class="editinput">
-                            <p>Nome:</p>
-                            <input class="input-value" type="text" name="nome" placeholder="Digite seu nome" value="Silas Ferreira de Moura">
+                    <form id="profileupdateForm">
+                        <div class="formbox">
+                            <div class="editinput">
+                                <p>Nome:</p>
+                                <input class="input-value" type="text" name="nome" id="inputname" placeholder="Digite seu nome" value="">
+                            </div>
+                            <div class="editinput">
+                                <p>Usuário:</p>
+                                <input class="input-value" type="text" name="usuario" id="inputuser" placeholder="Digite seu usuário" value="">
+                            </div>
+                            <div class="editinput">
+                                <p>E-mail:</p>
+                                <input class="input-value" type="email" name="email" id="inputemail" placeholder="Digite seu E-mail" value="">
+                            </div>
+                            <div class="editinput">
+                                <p>Telefone:</p>
+                                <input class="input-value" type="text" name="telefone" id="inputphone" placeholder="Digite seu telefone" value="">
+                            </div>
                         </div>
-                        <div class="editinput">
-                            <p>Usuário:</p>
-                            <input class="input-value" type="text" name="usuario" placeholder="Digite seu usuário" value="Silão da Massa">
-                        </div>
-                        <div class="editinput">
-                            <p>E-mail:</p>
-                            <input class="input-value" type="email" name="email" placeholder="Digite seu E-mail" value="silasfem14@gmail.com">
-                        </div>
-                        <div class="editinput">
-                            <p>Data de Nascimento:</p>
-                            <input class="input-value" type="date" name="datanasci" placeholder="Digite seu usuário"value="2004-02-15">
-                        </div>                        
-                    </div>
+                    </form>
                 </div>
             </div>
-        
+
         </div>
     </main>
 
-    <script src="js/acessibility.js"></script>
-    <script src="js/preloader.js"></script> 
+    <script src="js/preloader.js"></script>
     <script src="js/mododaltonico.js"></script>
-
+    <script src="js/acessibility.js"></script>
+    <script src="js/meuperfil_ui.js"></script>         
+    <script src="js/meuperfil_atualizar.js"></script>
+    <script src="js/header_global.js"></script> 
 </body>
+</html>

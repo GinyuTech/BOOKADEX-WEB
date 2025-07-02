@@ -29,10 +29,10 @@
     gap: 200px;
 }
 
-/* Imagem do perfil */
 .imgprofilebig {
+    width: 264px;
+    height: 264px;
     display: inline-block;
-    position: relative; /* necessário para posicionar o lápis dentro */
     border: solid #00c285 7px;
     border-radius: 50%;
     transition: 0.6s;
@@ -47,6 +47,7 @@
     cursor: pointer;
     transition: 0.5s;
     display: block;
+    background-color: #cccccc;
 }
 
 
@@ -55,7 +56,6 @@
     filter: brightness(1.20);
 }
 
-/* Ícone de lápis */
 .edit-icon {
     position: absolute;
     bottom: 5px;
@@ -123,10 +123,10 @@
 }
 
 .input-value {
-  color: #00c285;
-  padding-left: 15px;
-  font-size: 16px;
-  font-weight: bold;
+    color: #00c285;
+    padding-left: 15px;
+    font-size: 16px;
+    font-weight: bold;
 
 }
 
@@ -212,5 +212,5 @@
     border: solid 4px #00c285;
     background-color: #00411b;
     transition: 0.3s;
-    box-shadow: 0 0 5px rgba(84, 74, 158, 0.4);
-  }
+    box-shadow: 0 0 5px rgba(84, 74, 158, 0.4);
+}
